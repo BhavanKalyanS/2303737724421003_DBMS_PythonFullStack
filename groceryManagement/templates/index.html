@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title> Grocery Management System </title>
+
+    <style>
+      /* Ensuring the background image fills the screen */
+      .bkimg {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      /* Styling the Welcome message and button section */
+      .welcome-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 2;
+      }
+
+      .welcome-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .welcome-section .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand bg-success">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white" href="{{url_for('index')}}">
+                 Grocery Management System
+              </a>
+              <div class="navbar-nav">
+                <a class="nav-link active text-white" aria-current="page" href="{{url_for('index')}}">Home</a>
+                <a class="nav-link text-white" href="{{url_for('inventory')}}">Inventory</a>
+                <a class="nav-link text-white" href="#">Log In</a>
+                <a class="nav-link text-white" href="#">Sign Up</a>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <!-- Welcome message with Get Started button -->
+    <div class="welcome-section">
+        <h1>Welcome to Grocery Management</h1>
+        <p class="lead">Manage your inventory and keep track of all your groceries with ease!</p>
+        <a href="{{url_for('inventory')}}" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <!-- Background image -->
+    <div>
+        <img class="bkimg" src="{{ url_for('static', filename='images/bg.jpg') }}" alt="Background Image">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
